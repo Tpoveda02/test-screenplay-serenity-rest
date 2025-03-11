@@ -24,8 +24,7 @@ public class PostRequest extends RestInteraction {
     @Step("{0} realiza una solicitud POST al recurso {1} con el cuerpo {2}")
     public <T extends Actor> void performAs(T actor) {
         String fullUrl = as(actor).resolve(resource);
-
-        // Registra la URL completa y el cuerpo de la solicitud en los logs
+        
         LOGGER.info("Realizando solicitud POST a la URL: {}", fullUrl);
         LOGGER.info("Cuerpo de la solicitud: {}", requestBody);
 

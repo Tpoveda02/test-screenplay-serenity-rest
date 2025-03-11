@@ -28,6 +28,7 @@ public class GetService implements Task {
                         .with(
                                 requestSpecification -> requestSpecification
                                         .contentType(ContentType.JSON)
+                                        .relaxedHTTPSValidation()
                         )
                 );
     }

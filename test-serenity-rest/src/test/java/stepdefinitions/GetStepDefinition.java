@@ -6,7 +6,6 @@ import io.cucumber.java.en.When;
 import net.serenitybdd.screenplay.actors.OnStage;
 import net.serenitybdd.screenplay.actors.OnlineCast;
 import org.test.questions.CodeResponseQuestion;
-
 import static org.hamcrest.CoreMatchers.equalTo;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static org.apache.http.HttpStatus.SC_OK;

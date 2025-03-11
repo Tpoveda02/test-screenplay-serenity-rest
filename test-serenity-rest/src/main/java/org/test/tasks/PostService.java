@@ -35,6 +35,7 @@ public class PostService implements Task {
                         .with(
                                 requestSpecification -> requestSpecification
                                         .contentType(ContentType.JSON)
+                                        .relaxedHTTPSValidation()
                         )
         );
     }
