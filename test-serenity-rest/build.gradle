@@ -54,6 +54,7 @@ dependencies {
     implementation "ch.qos.logback:logback-classic:${logback_classic_version}"
     testImplementation "org.assertj:assertj-core:${assertj_core_version}"
     implementation "net.serenity-bdd:serenity-screenplay-rest:${serenity_version}"
+    testImplementation 'io.rest-assured:rest-assured:5.3.0'
     implementation 'org.slf4j:slf4j-api:2.0.3'
 }
 

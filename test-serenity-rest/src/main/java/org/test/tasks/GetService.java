@@ -6,7 +6,7 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.test.interations.GetRequest;
+import org.test.interactions.GetRequest;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 
 public class GetService implements Task {
