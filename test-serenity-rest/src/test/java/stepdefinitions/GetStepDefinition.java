@@ -3,14 +3,18 @@ package stepdefinitions;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+
 import net.serenitybdd.screenplay.actors.OnStage;
 import net.serenitybdd.screenplay.actors.OnlineCast;
 import org.test.questions.CodeResponseQuestion;
+import org.test.questions.IsResponseReady;
+
 import static org.hamcrest.CoreMatchers.equalTo;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static org.apache.http.HttpStatus.SC_OK;
 import static org.test.utils.Constants.WEB_URL;
 import static org.test.tasks.GetService.getService;
+import net.serenitybdd.screenplay.ensure.Ensure;
 
 public class GetStepDefinition extends SetService{
 
@@ -23,9 +27,9 @@ public class GetStepDefinition extends SetService{
     @When("Configura la petición a consumir con el recurso {string}")
     public void configuraLaPeticiónAConsumirConElRecurso(String resource) {
         actor.attemptsTo(
-                getService().withResource(resource)
+                getService().withResource(resource),
+                Ensure.that(IsResponseReady.isReady()).isTrue()
         );
-
     }
 
     @Then("debería visualizar el estado de dicha petición")

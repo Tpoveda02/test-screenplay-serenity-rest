@@ -24,6 +24,18 @@ Feature: Obtener peticiones de la seccion mascotas
       | 2   | 102   | Cats    | Whiskers| ["url2"]     | 202   | Playful  | pending   |
       | 3   | 103   | Birds   | Tweety  | ["url3"]     | 203   | Cute     | sold      |
 
+
+  Scenario Outline: Actualizar la información de una mascota (put)
+    When Configura la petición a consumir con el recurso "pet/" con el cuerpo
+      | id   | categoryId | categoryName | name   | photoUrls | tagId   | tagName   | status   |
+      | <id> | <catId>    | <catName>    | <name> | <photos>  | <tagId> | <tagName> | <status> |
+    Then debería visualizar el estado de dicha petición
+    Examples:
+      | id | catId | catName | name     | photos   | tagId | tagName  | status  |
+      | 1  | 101   | Dogs    | Max      | ["url1"] | 201   | Friendly | sold    |
+      | 2  | 102   | Cats    | Whiskers | ["url2"] | 202   | Playful  | sold    |
+      | 3  | 103   | Birds   | Tweety   | ["url3"] | 203   | Cute     | pending |
+
     Scenario Outline: Eliminar una mascota (delete)
       When Configura la petición a consumir con el id a eliminar"<resource>"
       Then debería visualizar el estado de dicha petición
