@@ -2,12 +2,10 @@ package stepdefinitions;
 
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.When;
-import net.serenitybdd.screenplay.actors.OnStage;
-import org.test.tasks.GetService;
 
-import static org.test.tasks.PostService.postService;
+
 import static org.test.tasks.PutService.putService;
-import static stepdefinitions.SetService.actor;
+
 
 
 public class PutStepDefinitions  extends  SetService{
